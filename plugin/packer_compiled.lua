@@ -89,6 +89,13 @@ _G.packer_plugins = {
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  conjure = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/opt/conjure",
+    url = "https://github.com/Olical/conjure"
+  },
   ["darkplus.nvim"] = {
     loaded = true,
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
@@ -134,6 +141,11 @@ _G.packer_plugins = {
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -167,6 +179,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType clojure ++once lua require("packer.load")({'conjure'}, { ft = "clojure" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

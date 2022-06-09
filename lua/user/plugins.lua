@@ -73,14 +73,19 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
-  use "nvim-treesitter/nvim-treesitter"
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'p00f/nvim-ts-rainbow' -- colorful parenthesis
 
   -- Icons && Nvim Tree file explorer
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
+  -- Status bar
   use 'nvim-lualine/lualine.nvim'
   use 'arkav/lualine-lsp-progress'
+
+  -- Support clojure repl
+  use { 'Olical/conjure', ft = 'clojure' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

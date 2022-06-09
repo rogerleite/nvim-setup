@@ -116,6 +116,11 @@ _G.packer_plugins = {
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["material.vim"] = {
+    loaded = true,
+    path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/material.vim",
+    url = "https://github.com/kaicataldo/material.vim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -204,7 +209,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType clojure ++once lua require("packer.load")({'conjure', 'vim-sexp-mappings-for-regular-people', 'vim-sexp', 'parinfer-rust'}, { ft = "clojure" }, _G.packer_plugins)]]
+vim.cmd [[au FileType clojure ++once lua require("packer.load")({'conjure', 'parinfer-rust', 'vim-sexp', 'vim-sexp-mappings-for-regular-people'}, { ft = "clojure" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

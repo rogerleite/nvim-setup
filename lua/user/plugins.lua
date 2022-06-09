@@ -48,6 +48,7 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  use { 'kaicataldo/material.vim', branch = 'main' }
 
   -- Git inside neovim
   use "tpope/vim-fugitive"

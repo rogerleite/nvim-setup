@@ -156,6 +156,13 @@ _G.packer_plugins = {
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["parinfer-rust"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/opt/parinfer-rust",
+    url = "https://github.com/eraserhd/parinfer-rust"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -175,6 +182,20 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-sexp"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/opt/vim-sexp",
+    url = "https://github.com/guns/vim-sexp"
+  },
+  ["vim-sexp-mappings-for-regular-people"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/roger.leite/.local/share/nvim/site/pack/packer/opt/vim-sexp-mappings-for-regular-people",
+    url = "https://github.com/tpope/vim-sexp-mappings-for-regular-people"
   }
 }
 
@@ -183,7 +204,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType clojure ++once lua require("packer.load")({'conjure'}, { ft = "clojure" }, _G.packer_plugins)]]
+vim.cmd [[au FileType clojure ++once lua require("packer.load")({'conjure', 'vim-sexp-mappings-for-regular-people', 'vim-sexp', 'parinfer-rust'}, { ft = "clojure" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

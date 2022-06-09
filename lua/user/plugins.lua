@@ -84,8 +84,11 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'arkav/lualine-lsp-progress'
 
-  -- Support clojure repl
-  use { 'Olical/conjure', ft = 'clojure' }
+  -- Support to clojure
+  use { 'Olical/conjure', ft = 'clojure' } -- connect and eval repl
+  use { 'guns/vim-sexp', ft = 'clojure' }
+  use { 'tpope/vim-sexp-mappings-for-regular-people', ft = 'clojure' }
+  use { 'eraserhd/parinfer-rust', ft = 'clojure', run = 'cargo build --release' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

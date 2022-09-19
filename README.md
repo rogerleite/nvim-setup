@@ -24,12 +24,11 @@ This setup uses [packer.nvim](https://github.com/wbthomason/packer.nvim).
 The list of all plugins are available at [plugins.lua](https://github.com/rogerleite/nvim-setup/blob/main/lua/user/plugins.lua#L42).
 Languages that are supported:
 * Clojure
-* Elixir
 * Dart / Flutter
 
-It's open to contributions. In the future I want to support sql and ruby. Feel free to open a pull request or maintain your fork. 
+It's open to contributions. In the future I want to support Elixir, Sql and Ruby. Feel free to open a pull request or maintain your fork.
 
-To install, clone the repo and make an `nvim` alias on `$HOME/.config` directory.
+To use the nvim settings, clone the repo and make an `nvim` alias on `$HOME/.config` directory.
 
 ```
 $ cd ~/.config
@@ -62,7 +61,7 @@ At this point, your nvim should be opening and not showing any error message.
 
 ### Install nerd font
 
-To make the icons work, you need a font patched with nerd font.
+To make the icons work (from nvim-tree and lualine for example), you need a font patched with nerd font.
 I like to use [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md#installation).
 
 **Brew (macOS only)**
@@ -77,7 +76,22 @@ Install it using the font-jetbrains-mono cask:
 https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md#manual-installation
 
 Change your terminal font to the one with nerd font patched.
+If you use iterm2 like me, you can change the font in Preferences -> Profile -> Text.
 
 ## How to use Clojure mode
 
+### How to install LSP server language
+In the first time you open some Clojure code (in the bottom right shows clojure when detected), you can check your LSP install (inside nvim) with:
+`:LspInfo`
+
+If it shows "0 client(s) attached to this buffer", it means you need to install it.
+To install a LSP server (inside nvim):
+`:LspInstall`
+
+It'll show a LSP installer modal with the status and it should works.
+
+### Using LSP features
+TODO
+
+### Evaluating to repl with Conjure
 TODO

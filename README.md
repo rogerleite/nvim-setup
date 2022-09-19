@@ -1,4 +1,3 @@
-
 # My nvim dotfiles
 
 These lua configurations were based on the amazing videos of [[chris@machine]](https://www.chrisatmachine.com/), the source repo is [here](https://github.com/LunarVim/Neovim-from-scratch).
@@ -58,6 +57,26 @@ In order to use [parinfer-rust](https://github.com/eraserhd/parinfer-rust) you n
 If you have some errors about parinfer when you open Clojure code, you can try to build a new release using:
 * `$ cd ~/.local/share/nvim/site/pack/packer/opt/parinfer-rust`
 * `$ cargo build --release`
+
+At this point, your nvim should be opening and not showing any error message.
+
+### Install nerd font
+
+To make the icons work, you need a font patched with nerd font.
+I like to use [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md#installation).
+
+**Brew (macOS only)**
+Tap the font cask to make the Jetbrains Mono font available :
+`$ brew tap homebrew/cask-fonts`
+
+Install it using the font-jetbrains-mono cask:
+`$ brew install --cask font-jetbrains-mono`
+`$ brew install --cask font-jetbrains-mono-nerd-font`
+
+**Manual instalation** for Linux/Mac/Windows
+https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md#manual-installation
+
+Change your terminal font to the one with nerd font patched.
 
 ## How to use Clojure mode
 

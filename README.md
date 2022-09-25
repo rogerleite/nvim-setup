@@ -59,6 +59,8 @@ If you have some errors about parinfer when you open Clojure code, you can try t
 
 At this point, your nvim should be opening and not showing any error message.
 
+## Guide to some plugin's dependencies
+
 ### Install nerd font
 
 To make the icons work (from nvim-tree and lualine for example), you need a font patched with nerd font.
@@ -77,6 +79,19 @@ https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/
 
 Change your terminal font to the one with nerd font patched.
 If you use iterm2 like me, you can change the font in Preferences -> Profile -> Text.
+
+### Telescope dependencies
+
+Telescope [suggested dependencies](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies).
+You can have an analysis of your Telescope dependencies using: `:checkhealth telescope` in nvim. 
+
+The non optional dependencies for me are:
+* BurntSushi/ripgrep is required for `live_grep` and `grep_string`. [Install link](https://github.com/BurntSushi/ripgrep#installation).
+* fd is a simple, fast and user-friendly alternative to `find`. [install link](https://github.com/sharkdp/fd#installation).
+
+** macOs users can use brew**
+`$ brew install ripgrep`
+`$ brew install fd`
 
 ## How to use Clojure mode
 

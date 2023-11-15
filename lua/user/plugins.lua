@@ -66,8 +66,13 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  --use "neovim/nvim-lspconfig" -- enable LSP
+  use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+  }
+  use { 'elixir-tools/elixir-tools.nvim', requires = { 'nvim-lua/plenary.nvim' }}
   --use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
 
   -- Telescope
